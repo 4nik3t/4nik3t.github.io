@@ -8,7 +8,9 @@ You can take a look at the [requirements](https://devdocs.magento.com/guides/v2.
 
 To create a magento website, run the following the following command in your webroot . This will create a folder as specified in the command with all the necessary files.
 
-` composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> `
+```shell
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 
+```
 
 ## Install Magento
 
@@ -21,7 +23,9 @@ php bin/magento setup:install --base-url=https://magento2.app --db-host=localhos
 
 Setting up developer mode makes a developer's life easier as cache and other features are being disabled. The following is the command to enable developer mode
 
-`php bin/magento deploy:mode:set developer`
+```shell
+php bin/magento deploy:mode:set developer
+```
 
 ## Common Installation Issues
 
@@ -68,8 +72,32 @@ protected function isPathInDirectories($path, $directories)
 
 **Images and assets resulting in 404**
 
-In case if any of your pages are not loading assets you can make use of the following command and it should work for you!
+1. In case if any of your pages are not loading assets you can make use of the following command and it should work for you!
 
-`php bin/magento setup:static-content:deploy -f`
+```shell
+php bin/magento setup:static-content:deploy -f
+```
+
+2. If the same issue persists you can replace the following line in app/etc/di.xml from 
+
+```xml
+<item name="view_preprocessed" xsi:type="object">Magento\Framework\App\View\Asset\MaterializationStrategy\Symlink</item>
+```
+
+to 
+
+```xml
+<item name="view_preprocessed" xsi:type="object">Magento\Framework\App\View\Asset\MaterializationStrategy\Copy</item>
+```
+
+Then, just delete the generated static asset files 
+
+```shell
+rm -R pub/static/*
+```
+
+
+
+
 
 
