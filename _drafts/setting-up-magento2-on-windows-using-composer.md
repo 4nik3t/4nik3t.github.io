@@ -17,6 +17,12 @@ Now move into your project folder and run the below command for installing magen
 php bin/magento setup:install --base-url=https://magento2.app --db-host=localhost --db-name=magento2 --db-user=root --db-password= --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=INR --timezone=Asia/Kolkata --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=https://127.0.0.1:9200 --elasticsearch-port=9200 --elasticsearch-enable-auth=1 --elasticsearch-username=elastic --elasticsearch-password=@el++++++++++++++gar#
 ```
 
+## Setup Developer Mode
+
+Setting up developer mode makes a developer's life easier as cache and other features are being disabled. The following is the command to enable developer mode
+
+`php bin/magento deploy:mode:set developer`
+
 ## Common Installation Issues
 
 **Unable to apply data patch Magento\Theme\Setup\Patch\Data\RegisterThemes for module Magento_Theme. Original exception message: Wrong file**
@@ -58,4 +64,12 @@ protected function isPathInDirectories($path, $directories)
     return false;
 }
 ```
+[Source](https://magento.stackexchange.com/questions/252188/magento-2-2-7-admin-panel-blank-page)
+
+**Images and assets resulting in 404**
+
+In case if any of your pages are not loading assets you can make use of the following command and it should work for you!
+
+`php bin/magento setup:static-content:deploy -f`
+
 
