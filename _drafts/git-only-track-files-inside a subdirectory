@@ -1,0 +1,26 @@
+/*
+# Ignore Everything
+
+!/.gitignore
+# Do not ignore the .gitignore file
+
+!app/
+# Do not ignore the app directory
+
+app/*
+# Ignore the inner contents of the app directory
+
+!app/code/
+# But do not ignore the app/code directory
+
+app/code/*
+# Ignore the inner contents of the app/code directory
+
+!app/code/community/
+# But do not ignore the app/code/community directory
+
+app/code/community/*
+# Ignore the inner contents of the app/code/community directory
+
+!app/code/community/Ingenico
+# But do not ignore the app/code/community/Ingenico directory
