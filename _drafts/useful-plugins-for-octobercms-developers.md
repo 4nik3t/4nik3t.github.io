@@ -8,6 +8,18 @@ Allows you to generate helper files for your IDE to understand. This, helps the 
 
 `php artisan plugin:install flynsarmy.idehelper`
 
+### Installation - Via Composer
+
+Add the following to your composer.json's require-dev key
+
+```json
+"require-dev": {
+      "flynsarmy/oc-idehelper-plugin": "*"
+  }
+```
+
+And then run composer update
+
 ### Usage
 
 Use `php artisan ide-helper:generate` to generate a IDE Helper file and enjoy.
