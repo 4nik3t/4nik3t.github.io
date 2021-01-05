@@ -2,6 +2,7 @@ Migrations in laravel are a fantastic tool for maintaining database integrity an
 
 - [ ] Migrations should have both the up and down methods.
 - [ ] If you have added any new columns to the database make sure they are nullable or set a default value to them.
+- [ ] New columns before and after columns should be proper
 - [ ] Do not make any modification to the already executed migration files that would alter the database structure, you can make bug fixes thats okay.
 
 
